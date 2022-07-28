@@ -26,6 +26,9 @@ class Character
     #[ORM\Column]
     private ?int $attack = null;
 
+    #[ORM\Column]
+    private ?int $def = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Character
     public function setAttack(int $attack): self
     {
         $this->attack = $attack;
+
+        return $this;
+    }
+
+    public function getDef(): ?int
+    {
+        return $this->def;
+    }
+
+    public function setDef(int $def): self
+    {
+        $this->def = $def;
 
         return $this;
     }
